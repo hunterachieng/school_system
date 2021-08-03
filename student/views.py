@@ -5,8 +5,17 @@ from .forms import StudentRegistrationForm
 # handles http requests
 #class based and function based views
 
+#conducting form validation
 def register_student(request):
-    #creating an instance of the form
-    form = StudentRegistrationForm()
+    if request.method =="POST":
+        form = StudentRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            print(form.errors)
+    else: 
+         #creating an instance of the form
+
+         form = StudentRegistrationForm()
     return render(request,"register_student.html",{"form":form})
 
