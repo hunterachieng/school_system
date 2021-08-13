@@ -18,7 +18,7 @@ class Course(models.Model):
    (u'p',u'PD'),
    (u'N',u'NYJ'))
     course_code = models.CharField(max_length=10,choices=course_code_choice)
-    trainer = models.CharField(max_length=10)
+    trainer = models.CharField(max_length=20)
     course_description = models.TextField()
     syllabus = models.FileField(upload_to='files/')
     

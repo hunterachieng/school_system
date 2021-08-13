@@ -61,7 +61,7 @@
 </head>
 <body>
     <h1>Trainer Registration Form</h1>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
              {%csrf_token%}
         {{form.as_p}}
         <input type="submit" id="submit"></input>
