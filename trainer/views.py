@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import TrainerRegistrationForm
+from .models import Trainer
 
 # Create your views here.
 def register_trainer(request):
@@ -14,4 +15,9 @@ def register_trainer(request):
 
          form = TrainerRegistrationForm()
     return render(request,"register_trainer.html",{"form":form})
+
+#lists all trainers
+def trainer_list(request):
+    trainers = Trainer.objects.all()
+    return render(request,"trainer_list.html", {"trainers":trainers})
     

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import EventRegistrationForm
+from .models import Event
 
 # Create your views here.
 def register_event(request):
@@ -12,4 +13,11 @@ def register_event(request):
     else:
         form = EventRegistrationForm()
     return render(request,"register_event.html",{"form":form})
+
+#event list
+def event_list(request):
+    events = Event.objects.all()
+    return render(request,"event_list.html",{"events":events})
+
+    
 

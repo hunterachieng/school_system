@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+        body{
+            background-color: rgb(253, 213, 161);
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        table{
+            width: 40%;
+            border: 1px groove rgb(238, 164, 111);
+            text-align: left;
+            height: 400px;
+            margin-left: 30%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: rgb(238, 164, 111);
+            box-shadow: 0px 10px 10px rgb(138, 113, 96);
+            border-radius: 10px;
+        }
+       
+        tr th{
+            text-decoration: underline;
+            color: rgb(215, 215, 240);
+            font-size: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>Events List</h1>
+    <table>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Description</th>
+            <th>Venue</th>
+            <th>Event Start</th>
+            <th>Event End</th>
+            <th>Attendees</th>
+            <th>Event Link</th>
+            
+        </tr>
+        {% for event in events %}
+        <tr>
+            <td>{{event.event_name}}</td>
+                <td>{{event.event_date}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.venue}}</td>
+                <td>{{event.event_start}}</td>
+                <td>{{event.event_end}}</td>
+                <td>{{event.attendees}}</td>
+                <td>{{event.event_link}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
