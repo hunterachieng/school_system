@@ -1,12 +1,16 @@
 from django.db import models
+from django.urls import reverse
+from django.utils import timezone
 
-# Create your models here.
 class Event(models.Model):
-    event_name = models.CharField(max_length=30)
-    event_date = models.DateField()
+    title = models.CharField(max_length=200,null=True,blank=True)
     description = models.TextField()
-    venue = models.CharField(max_length=10)
-    event_start= models.TimeField()
-    event_end = models.TimeField()
-    attendees = models.EmailField()
-    event_link = models.URLField()
+    start_time = models.DateTimeField(default=timezone.now)
+    end_time = models.DateTimeField(default=timezone.now)
+    venue=models.CharField(max_length=12,default="AkiraChix")
+
+
+    @property
+    def get_html_url(self):
+        url = reverse('cal:event_edit', args=(self.id,))
+        return f'<a href="{url}"> {self.title} </a>'
