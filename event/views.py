@@ -15,7 +15,7 @@ def index(request):
 
 class CalendarView(generic.ListView):
     model = Event
-    template_name = 'calendar.html'
+    template_name = 'cal/calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -57,4 +57,4 @@ def event(request, event_id=None):
     if request.POST and form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('cal:calendar'))
-    return render(request, 'event.html', {'form': form})
+    return render(request, 'cal/event.html', {'form': form})

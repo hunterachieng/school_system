@@ -38,6 +38,20 @@
         footer{
             text-align: center;
         }
+        #pic{
+            width: 100%;
+        }
+        #button{
+            background-color: rgb(235, 108, 108);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            
+        }
+        #button a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
       
     </style>
 </head>
@@ -51,16 +65,20 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>Course</th>
+            <th>Contract</th>
+
             
         </tr>
         {% for trainer in trainers %}
-        <tr>
-            <td><img src= "{{trainer.image.url}}"></td>
+        <tr>{% if trainer.image%}
+            <td><img id="pic" src= "{{trainer.image.url}}"></td>
+            {% endif %}
             <td>{{trainer.first_name}}</td>
                 <td>{{trainer.last_name}}</td>
                 <td>{{trainer.email}}</td>
                 <td>{{trainer.phone_number}}</td>
                 <td>{{trainer.course}}</td>
+                <td><button id="button"><a href="{{trainer.contract.url}}" download="{{trainer.contract.url}}" >Download</a></button></td>
         </tr>
         {%endfor%}
     </table>
