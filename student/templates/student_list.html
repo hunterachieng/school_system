@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,6 +53,47 @@
             text-decoration: none;
             color: blanchedalmond;
         }
+        #edit{
+            background-color: rgb(165, 235, 108);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #edit a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #profile{
+            background-color: rgb(231, 158, 22);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #profile a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #delete{
+            background-color: rgb(231, 102, 85);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #delete a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 2%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
       
     </style>
 </head>
@@ -64,6 +106,9 @@
             <th>Last Name</th>
             <th>Age</th>
             <th>Medical Record</th>
+            <th>Profile</th>
+            <th>Edit Profile</th>
+            <th>Delete</th>
         </tr>
         {% for student in students %}
         <tr>
@@ -74,9 +119,13 @@
                 <td>{{student.last_name}}</td>
                 <td>{{student.age}}</td>
                 <td><button id="button"><a href="{{student.medical_record.url}}" download="{{student.medical_record.url}}" >Download</a></button></td>
+                <td><button id = "profile"><a href="{%url 'student_profile' id=student.id %}">View</a></button></td>
+                <td><button id="edit"><a href="{%url 'edit_student' id=student.id %}">Edit</a></button></td>
+                <td><button id="delete"><a href="{%url 'delete_student' id=student.id %}">Delete</a></button></td>
         </tr>
         {%endfor%}
     </table>
+    <button id="back"><a href="{%url 'student_page'%}">Back to Students</a></button>
     <footer>
         <p>&copy;Hunter2021</p>
     </footer>

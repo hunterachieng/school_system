@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left: 25%;
+            margin-top: 5%;
+            background-color: antiquewhite;
+        }
+        h1{
+            margin-left: 10%;
+        }
+        form{
+            border: 1px groove burlywood;
+            box-shadow: 0px 10px 10px rgb(209, 205, 199);
+            width: 60%;
+            padding: 20px;
+            background-color: beige;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-bottom: 5%;
+        }
+        #submit{
+            padding: 10px;
+            border: transparent;
+            background-color:antiquewhite ;
+            width: 30%;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0px 10px 10px rgb(209, 205, 199);
+        }
+        #submit:hover{
+            transform: translateX(2px);
+        }
+        footer{
+            text-align: center;
+        }
+        input{
+            width:90%;
+            padding: 15px;
+            box-shadow: 0px 5px 5px rgb(209, 205, 199);
+            border: transparent;
+            border-radius: 5px;
+        }
+        input:hover{
+            box-shadow: 0px 0px 0px ;
+        }
+        select{
+            width: 30%;
+            padding: 10px;
+            border: transparent;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 5px 5px rgb(209, 205, 199);
+        }
+        textarea{
+            border: transparent;
+            box-shadow: 0px 5px 5px rgb(209, 205, 199);
+            border-radius: 5px;
+            width: 94%;
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: -2%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Registration Form</h1>
+    <button id="back"><a href="{%url 'course_list'%}">Back to list</a></button>
+    <form method="POST" enctype="multipart/form-data">
+             {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" id="submit"></input>
+        
+    </form>
+    <footer>
+        <p>&copy;Hunter2021</p>
+    </footer>
+    
+</body>
+</html>

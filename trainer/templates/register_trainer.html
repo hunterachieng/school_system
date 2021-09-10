@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
         body{
             margin-left: 25%;
             margin-top: 5%;
-            background-color: rgb(184, 202, 236);
+            background-color: antiquewhite;
         }
         h1{
             margin-left: 10%;
@@ -19,7 +20,7 @@
             box-shadow: 0px 10px 10px rgb(209, 205, 199);
             width: 60%;
             padding: 20px;
-            background-color: rgb(222, 228, 236);
+            background-color: beige;
             border-radius: 10px;
             font-size: 18px;
             margin-bottom: 5%;
@@ -57,9 +58,23 @@
             border-radius: 5px;
             box-shadow: 0px 5px 5px rgb(209, 205, 199);
         }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 2%;
+            position: absolute;
+            top: -3%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
     </style>
 </head>
 <body>
+    <button id="back"><a href="{%url 'trainer_page'%}">Back to Trainers</a></button>
     <h1>Trainer Registration Form</h1>
     <form method="POST" enctype="multipart/form-data">
              {%csrf_token%}

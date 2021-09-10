@@ -19,11 +19,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path("", include("core.urls")),
+    path("coursecore/", include("coursecore.urls")),
+    path("studentcore/", include("studentcore.urls")),
+    path("trainercore/", include("trainercore.urls")),
     path('admin/', admin.site.urls),
     path("student/",include("student.urls")),
     path("trainer/", include("trainer.urls")),
     path("course/",include("course.urls")),
     path("event/",include("event.urls")),
+    path("api/", include("api.urls")),
+  
 
 ]
 if settings.DEBUG:

@@ -18,7 +18,7 @@
             border: 1px groove rgb(238, 164, 111);
             text-align: left;
             height: 400px;
-            margin-left: 25%;
+            margin-left: 15%;
             padding: 10px;
             font-size: 18px;
             background-color: rgb(238, 164, 111);
@@ -51,12 +51,54 @@
         #button a{
             text-decoration: none;
             color: blanchedalmond;
+        }#edit{
+            background-color: rgb(165, 235, 108);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
         }
+        #edit a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #profile{
+            background-color: rgb(231, 158, 22);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #profile a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #delete{
+            background-color: rgb(231, 102, 85);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #delete a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 2%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+      
       
     </style>
 </head>
 <body>
     <h1>Trainers' List</h1>
+   
     <table>
         <tr>
             <th>Profile</th>
@@ -66,6 +108,9 @@
             <th>Phone Number</th>
             <th>Course</th>
             <th>Contract</th>
+            <th>Profile</th>
+            <th>Edit Profile</th>
+            <th>Delete</th>
 
             
         </tr>
@@ -79,9 +124,13 @@
                 <td>{{trainer.phone_number}}</td>
                 <td>{{trainer.course}}</td>
                 <td><button id="button"><a href="{{trainer.contract.url}}" download="{{trainer.contract.url}}" >Download</a></button></td>
+                <td><button id = "profile"><a href="{%url 'trainer_profile' id=trainer.id %}">View</a></button></td>
+                <td><button id="edit"><a href="{%url 'edit_trainer' id=trainer.id %}">Edit</a></button></td>
+                <td><button id="delete"><a href="{%url 'delete_trainer' id=trainer.id %}">Delete</a></button></td>
         </tr>
         {%endfor%}
     </table>
+    <button id="back"><a href="{%url 'trainer_page'%}">Back to Trainers</a></button>
     <footer>
         <p>&copy;Hunter2021</p>
     </footer>
