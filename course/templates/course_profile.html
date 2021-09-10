@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgb(253, 213, 161);
+        }
+        /* .details{
+              position: absolute;
+              left: 37%;
+              top: 12%;
+        } */
+        .form{
+            /* border: 1px solid rgb(221, 167, 117); */
+            margin-left: 20%;
+            padding: 20px;
+            width: 60%;
+            background-color: rgb(247, 236, 194);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 10px rgb(233, 190, 134);
+            
+        }
+        h3{
+            color: chocolate;
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 2%;;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #edit{
+            background-color: rgb(165, 235, 108);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            position: absolute;
+            left: 30%;
+            top: 38%;
+        }
+        #edit a{
+            text-decoration: none;
+            color: blanchedalmond;
+             
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: darkgoldenrod; text-align: center;">Course Profile</h1>
+    <button id="back"><a href="{%url 'course_list'%}">Back to list</a></button>
+    <div class="form">
+   
+                <div class="details">
+                    <h3>Course Name:</h3> <h2>{{course.course_name}}</h2>
+                    <h3>Course Code:</h3> <h2>{{course.course_code}}</h2>
+                    <button id="edit"><a href="{%url 'edit_course' id=course.id %}">Edit</a></button>
+
+                </div>
+                <hr>
+                <h2 style="color: rgb(187, 133, 62);">Details</h2>
+                <h3>Trainer: </h3>
+                    <h4>{{course.trainer}}</h4>
+                <h3>Course Description: </h3>
+                    <h4>{{course.course_description}}</h4>
+                
+            </div>
+    
+</body>
+</html>

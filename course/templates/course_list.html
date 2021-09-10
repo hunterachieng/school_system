@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,48 @@
             border-bottom: 1px solid black;           
            
         }
+    #edit{
+            background-color: rgb(165, 235, 108);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #edit a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #profile{
+            background-color: rgb(231, 158, 22);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #profile a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #delete{
+            background-color: rgb(231, 102, 85);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #delete a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 2%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+      
     
        
         
@@ -50,6 +93,9 @@
             <!-- <th>Course Code</th> -->
             <th>Trainer</th>
             <th>Course Description</th>
+            <th>Profile</th>
+            <th>Edit Profile</th>
+            <th>Delete</th>
           
             
         </tr>
@@ -59,9 +105,13 @@
                 <!-- <td>{{course.course_code}}</td> -->
                 <td>{{course.trainer}}</td>
                 <td>{{course.course_description}}</td>
+                <td><button id = "profile"><a href="{%url 'course_profile' id=course.id %}">View</a></button></td>
+                <td><button id="edit"><a href="{%url 'edit_course' id=course.id %}">Edit</a></button></td>
+                <td><button id="delete"><a href="{%url 'delete_course' id=course.id %}">Delete</a></button></td>
                 
         </tr>
         {%endfor%}
     </table>
+    <button id="back"><a href="{%url 'course_page'%}">Back to Courses</a></button>
 </body>
 </html>

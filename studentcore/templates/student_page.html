@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            height: 40px;
+            border-bottom: 1px solid rgb(165, 207, 214);
+           margin-bottom: 2%;
+            text-align: center;
+            width: 100%;
+           
+        }
+        .navbar:hover{
+            box-shadow: 0px 5px 5px 0px rgb(156, 217, 228);
+        }
+        .navbar a{
+            text-decoration: none;
+            padding: 20px;
+            color: rgb(218, 171, 71);
+            font-size: 20px;
+           
+        }
+        #back{
+            background-color: rgb(175, 219, 73);
+            border: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 2%;
+            position: absolute;
+            top: -3%;
+        }
+        #back a{
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+        #system{
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{%url 'register_student'%}">Student Register</a>
+        <a href="{%url 'student_list'%}">Student List</a>
+    </nav>
+    
+        <button id="back"><a href="{%url 'homepage'%}">Back to Home</a></button>
+        <img id="system" src={% static 'students.jpg' %}/>
+    
+</body>
+</html>
