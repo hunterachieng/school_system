@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Event(models.Model):
     title = models.CharField(max_length=200,null=True,blank=True)
-    description = models.TextField()
+    description = models.TextField(null=True)
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(default=timezone.now)
     venue=models.CharField(max_length=12,default="AkiraChix")
