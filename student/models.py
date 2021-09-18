@@ -23,4 +23,4 @@ class Student(models.Model):
     guardian_contact = models.CharField(max_length=14, default=None, null=True)
     admission_date = models.DateField(default=None, null=True)
     room_no = models.SmallIntegerField(default=None, null=True, blank=True)
-    laptop_serial_number = models.CharField(max_length=20,null=True, blank=True)
+    
