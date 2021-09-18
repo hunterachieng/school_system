@@ -9,7 +9,7 @@ Calendar
 	<a class="btn info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
 	<a class="btn info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
 	<a class="btn info" href="{% url 'cal:event_new' %}"> Add Event </a>
-	<a class="btn" href="{% url 'cal:edit_event' event_id=event.event_id%}"> Edit Event </a>
+	
 </div>
 
 {{ calendar }}
