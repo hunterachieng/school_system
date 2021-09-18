@@ -18,7 +18,7 @@ class Student(models.Model):
     phone_number = models.CharField(max_length=14, default=None,null=True)
     medical_record = models.FileField(default=None, upload_to="files/", null=True)
     city =models.CharField(max_length=15, default=None, null=True)
-    academic_year = models.BigIntegerField(default=None, null=True)
+    academic_year = models.IntegerField(default=None, null=True)
     guardian_name = models.CharField(max_length= 20, default=None, null=True)
     guardian_contact = models.CharField(max_length=14, default=None, null=True)
     admission_date = models.DateField(default=None, null=True)
