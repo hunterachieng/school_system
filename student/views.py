@@ -33,7 +33,7 @@ def edit_student(request,id):
             form.save()
     else:
         form = StudentRegistrationForm(instance=student)
-        return render(request, "edit_student.html", {"form":form})
+    return render(request, "edit_student.html", {"form":form})
 
 def student_profile(request,id):
     student = Student.objects.get(id = id)
