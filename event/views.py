@@ -58,13 +58,3 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('cal:calendar'))
     return render(request, 'cal/event.html', {'form': form})
-
-def edit_event(request,event_id):
-    event = Event.objects.get(event_id=event_id)
-    if request.method == 'POST':
-        form = EventForm(request.POST, instance=event)
-        if form.is_valid():
-            form.save()
-    else:
-        form = EventForm(instance=event)
-        return render(request,'edit_calendar.html',{"form":form})

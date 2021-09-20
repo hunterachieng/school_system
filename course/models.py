@@ -9,7 +9,7 @@ class Course(models.Model):
     (u'UI',u'UI/UX Design'),
     (u'P',u'Professional Development'),
     (u'N',u'Navigating Your Journey'))
-    course_name = models.CharField(max_length=20,choices=course_choice)
+    course_name = models.CharField(max_length=20,choices=course_choice, null=True)
     course_code_choice=((u'P',u'P-BackEnd'),
    ( u'J',u'J-FrontEnd'),
    (u'K',u'K-MobFront'),
@@ -17,10 +17,10 @@ class Course(models.Model):
    (u'UI',u'UI/UX'),
    (u'p',u'PD'),
    (u'N',u'NYJ'))
-    course_code = models.CharField(max_length=10,choices=course_code_choice)
-    trainer = models.CharField(max_length=20)
-    course_description = models.TextField()
-    syllabus = models.FileField(upload_to='files/')
+    course_code = models.CharField(max_length=10,choices=course_code_choice, null=True)
+    trainer = models.CharField(max_length=20, null=True)
+    course_description = models.TextField(null=True)
+    syllabus = models.FileField(upload_to='files/', null=True)
     
 
 
